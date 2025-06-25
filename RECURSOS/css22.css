@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+
+} 
+.grid{
+display: grid;
+width: 80%;
+height: 500px;
+min-height: 400px;
+margin: 20px;
+grid-template-columns: 200px 30% 300px; 
+/*grid-template-columns: repeat(3, 1fr); */ 
+grid-template-rows: repeat(3, 1fr); 
+gap: 10px;
+
+} 
+.grid > *{ border: 1px solid crimson; 
+
+} 
+.elemento01{
+    background-color: red;
+} 
+.elemento02{
+    background-color: green; 
+
+} 
+.elemento03{
+    background-color: blue;
+}
