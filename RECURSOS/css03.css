@@ -1,0 +1,330 @@
+/* Paleta de colores:
+   Uva oscuro: #333446
+   Verde medio: #A7C1A8
+   Verde claro: #D1D8BE
+   Crema: #EAEFEF
+*/
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #eaefef 0%, #d1d8be 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #333446, #a7c1a8);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(129, 154, 145, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+header nav a {
+  display: inline-block;
+  background-color: #eaefef;
+  color: #333446;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav a:hover {
+  background-color: #a7c1a8;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== CONTENEDOR PRINCIPAL FLEX - DIRECCIÓN COLUMNA ===== */
+.contenedor-flex {
+  display: flex;
+  flex-direction: column; /* AQUÍ ESTÁ LA DIFERENCIA CLAVE */
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 600px; /* Altura mínima para que se vea el efecto columna */
+}
+
+/* Elementos de imagen */
+.imagen-item {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(129, 154, 145, 0.15);
+  transition: all 0.3s ease;
+  flex: 0 1 280px;
+  max-width: 280px;
+  width: 280px;
+  border: 3px solid #a7c1a8;
+}
+
+.imagen-item:hover {
+  transform: translateX(8px); /* Movimiento horizontal para columnas */
+  box-shadow: 0 12px 30px rgba(129, 154, 145, 0.25);
+  border-color: #333446;
+}
+
+.imagen-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imagen-item:hover img {
+  transform: scale(1.05);
+}
+
+.imagen-item figcaption {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333446;
+  background-color: #eaefef;
+  border-top: 2px solid #a7c1a8;
+}
+
+/* Alternancia de colores para mejor visualización en columna */
+.imagen-item:nth-child(odd) {
+  border-color: #333446;
+}
+
+.imagen-item:nth-child(even) {
+  border-color: #a7c1a8;
+}
+
+.imagen-item:nth-child(odd) figcaption {
+  background-color: #d1d8be;
+}
+
+/* Sección de explicación */
+.explicacion {
+  background-color: white;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(129, 154, 145, 0.15);
+  border-left: 5px solid #333446;
+}
+
+.explicacion h2 {
+  color: #333446;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.explicacion p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.explicacion code {
+  background-color: #d1d8be;
+  color: #333446;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.explicacion ul {
+  list-style: none;
+  padding: 0;
+}
+
+.explicacion ul li {
+  background-color: #eaefef;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid #a7c1a8;
+  font-size: 1rem;
+}
+
+.explicacion ul li strong {
+  color: #333446;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #a7c1a8, #333446);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 -4px 8px rgba(129, 154, 145, 0.2);
+}
+
+footer p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE DESIGN PARA FLEX COLUMN ===== */
+
+/* Desktop grande: 3 columnas */
+@media (min-width: 1200px) {
+  .contenedor-flex {
+    min-height: 800px;
+    gap: 2rem;
+  }
+
+  .imagen-item {
+    max-width: 300px;
+    width: 300px;
+  }
+}
+
+/* Desktop mediano: 2 columnas */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .contenedor-flex {
+    min-height: 700px;
+  }
+}
+
+/* Tablet: 2 columnas más pequeñas */
+@media (max-width: 899px) and (min-width: 769px) {
+  .contenedor-flex {
+    min-height: 900px;
+    gap: 1.2rem;
+  }
+
+  .imagen-item {
+    max-width: 250px;
+    width: 250px;
+  }
+
+  .imagen-item img {
+    height: 160px;
+  }
+}
+
+/* Móvil: Cambiar a dirección fila para mejor UX */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .contenedor-flex {
+    flex-direction: row; /* Cambio a fila en móvil */
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: auto;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .imagen-item {
+    flex: 0 1 300px;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .imagen-item:hover {
+    transform: translateY(-5px); /* Volver a movimiento vertical */
+  }
+
+  .explicacion {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .contenedor-flex {
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .imagen-item {
+    max-width: 280px;
+  }
+
+  .imagen-item img {
+    height: 180px;
+  }
+
+  header nav a {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .explicacion {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Ajustes específicos para columnas en desktop */
+@media (min-width: 769px) {
+  /* Cuando hay espacio, mantenemos flex-direction: column */
+  .contenedor-flex {
+    align-content: flex-start; /* Alinea las columnas al inicio */
+  }
+
+  /* Distribución equilibrada de elementos en columnas */
+  .imagen-item:nth-child(1),
+  .imagen-item:nth-child(4) {
+    align-self: flex-start;
+  }
+
+  .imagen-item:nth-child(2),
+  .imagen-item:nth-child(5) {
+    align-self: center;
+  }
+
+  .imagen-item:nth-child(3),
+  .imagen-item:nth-child(6) {
+    align-self: flex-end;
+  }
+}
